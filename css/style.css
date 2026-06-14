@@ -1,0 +1,235 @@
+body {
+    background: linear-gradient(135deg, #fff7ed 0%, #fff0de 40%, #ffffff 100%);
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.brand-logo {
+    max-width: 110px;
+    margin-bottom: 1rem;
+}
+
+.card {
+    border-radius: 1.2rem;
+    border: 1px solid rgba(255, 159, 67, 0.18);
+}
+
+.orange-card {
+    background: rgba(255, 255, 255, 0.96);
+}
+
+.card-body {
+    background: transparent;
+}
+
+.toggle-btn-group .btn {
+    min-width: 130px;
+}
+
+.form-label {
+    color: #6e4d0e;
+}
+
+.form-control,
+.form-select {
+    border-color: rgba(255, 159, 67, 0.3);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #ff8a00;
+    box-shadow: 0 0 0 0.15rem rgba(255, 138, 0, 0.18);
+}
+
+.form-section {
+    transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.form-section.d-none {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.btn-outline-warning.active,
+.btn-warning.active {
+    box-shadow: 0 0 0 0.20rem rgba(255, 159, 67, 0.22);
+}
+
+.btn-warning {
+    background-color: #ff8a00;
+    border-color: #ff8a00;
+}
+
+.btn-outline-warning {
+    color: #d46b02;
+    border-color: #ffb347;
+}
+
+.btn-outline-warning:hover,
+.btn-outline-warning:focus {
+    color: #fff;
+    background-color: #ffb347;
+    border-color: #ffb347;
+}
+
+@media (max-width: 576px) {
+    .toggle-btn-group {
+        flex-wrap: wrap;
+    }
+
+    .toggle-btn-group .btn {
+        width: 100%;
+    }
+}
+
+.auth-page {
+    background: linear-gradient(135deg, #fff7ed 0%, #fff0de 40%, #ffffff 100%);
+    min-height: 100vh;
+}
+
+.auth-wrapper {
+    padding: 2rem;
+}
+
+.auth-card {
+    max-width: 420px;
+    width: 100%;
+    border-radius: 1.75rem;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 159, 67, 0.18);
+}
+
+.auth-logo {
+    max-width: 110px;
+}
+
+.auth-card .form-control {
+    border-color: rgba(255, 159, 67, 0.3);
+}
+
+.auth-card .form-control:focus {
+    border-color: #ff8a00;
+    box-shadow: 0 0 0 0.15rem rgba(255, 138, 0, 0.18);
+}
+
+.auth-card .btn-outline-secondary {
+    color: #6e4d0e;
+    border-color: rgba(110, 77, 14, 0.25);
+}
+
+.auth-card .btn-outline-secondary:hover,
+.auth-card .btn-outline-secondary:focus {
+    background-color: rgba(255, 159, 67, 0.1);
+}
+
+
+.topbar {
+    font-size: 0.9rem;
+}
+
+.navbar .nav-link {
+    color: #6e4d0e;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    color: #ff8a00;
+}
+
+.hero-section {
+    background: linear-gradient(180deg, rgba(255, 234, 211, 0.95), rgba(255, 248, 240, 0.9));
+}
+
+.hero-section .badge {
+    background: rgba(255, 204, 128, 0.35);
+}
+
+.product-section {
+    background: #fff8f2;
+}
+
+.product-card {
+    border-radius: 1.4rem;
+}
+
+.product-card .card-img-top {
+    width: 100%;
+    height: 260px;
+    border-top-left-radius: 1.4rem;
+    border-top-right-radius: 1.4rem;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.product-badge {
+    display: inline-block;
+    background: rgba(255, 138, 0, 0.12);
+    color: #bf6200;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card {
+    border: 1px solid rgba(255, 159, 67, 0.2);
+}
+
+.footer {
+    background: #1f1a13;
+}
+
+.footer a {
+    color: #f7d3a8;
+}
+
+.footer a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 767px) {
+    .hero-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+.auth-page {
+    background: linear-gradient(135deg, #fff7ed 0%, #fff0de 40%, #ffffff 100%);
+    min-height: 100vh;
+}
+
+.auth-wrapper {
+    padding: 2rem;
+}
+
+.auth-card {
+    max-width: 420px;
+    width: 100%;
+    border-radius: 1.75rem;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 159, 67, 0.18);
+}
+
+.auth-logo {
+    max-width: 110px;
+}
+
+.auth-card .form-control {
+    border-color: rgba(255, 159, 67, 0.3);
+}
+
+.auth-card .form-control:focus {
+    border-color: #ff8a00;
+    box-shadow: 0 0 0 0.15rem rgba(255, 138, 0, 0.18);
+}
+
+.auth-card .btn-outline-secondary {
+    color: #6e4d0e;
+    border-color: rgba(110, 77, 14, 0.25);
+}
+
+.auth-card .btn-outline-secondary:hover,
+.auth-card .btn-outline-secondary:focus {
+    background-color: rgba(255, 159, 67, 0.1);
+}
