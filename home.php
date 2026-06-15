@@ -59,7 +59,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 </ul>
                 <div class="d-flex align-items-center gap-2">
-                    <a href="#" class="btn btn-outline-warning btn-sm">Cart</a>
+                    <a href="cart.php" class="btn btn-outline-warning btn-sm">Cart</a>
                     <div class="dropdown">
                         <button class="btn btn-warning btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Profile
@@ -174,7 +174,7 @@
                         <div class="text-warning">4.8 ★</div>
                     </div>
                     <div class="d-grid gap-2">
-                        <button class="btn btn-warning">Add to cart</button>
+                        <button class="btn btn-warning" onclick="addToCart(<?php echo $product_data["product_id"]; ?>)">Add to cart</button>
                         <button class="btn btn-outline-warning">Add to watchlist</button>
                         <button class="btn btn-sm btn-light">Buy now</button>
                     </div>
@@ -257,6 +257,9 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

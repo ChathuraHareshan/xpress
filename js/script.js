@@ -123,3 +123,152 @@ function login() {
     request.send(form);
 }
 
+function addToCart(productId) {
+    
+    var form = new FormData();
+    form.append("id", productId);
+
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === 4 && request.status === 200) {
+            var response = request.responseText.trim();
+            if (response === "success") {
+                Swal.fire({
+                    title: "Added to cart!",
+                    icon: "success",
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+            } else {
+                Swal.fire({
+                    title: "Error!",
+                    text: response,
+                    icon: "error"
+                });
+            }
+        }
+    };
+    request.open("POST", "process/addToCartProcess.php", true);
+    request.send(form);
+}
+
+function updateQuantity(productId, action) {
+    var quantitySpan = document.querySelector(`.quantity-display[data-product="${productId}"]`);
+    var currentQty = parseInt(quantitySpan.innerText);
+    var newQty = currentQty;
+    
+    if (action === 'increase') {
+        newQty = currentQty + 1;
+    } else if (action === 'decrease') {
+        newQty = currentQty - 1;
+        if (newQty < 1) {
+            Swal.fire("Error", "Quantity cannot be less than 1", "warning");
+            return;
+        }
+    }
+    
+    var form = new FormData();
+    form.append("id", productId);
+    form.append("qty", newQty);
+    
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+        if (request.readyState === 4) {
+            if (request.status === 200) {
+                var response = request.responseText.trim();
+                var parts = response.split('|');
+                
+                if (parts[0] === "success") {
+                    var newQuantity = parts[1];
+                    var newTotal = parts[2];
+                    
+
+                    quantitySpan.innerText = newQuantity;
+                    var priceElement = document.querySelector(`.item-price[data-product="${productId}"]`);
+                    priceElement.innerText = 'Rs.' + newTotal;
+                    
+
+                    calculateTotals();
+                    
+
+                    quantitySpan.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        quantitySpan.style.transform = 'scale(1)';
+                    }, 200);
+                } else {
+                    Swal.fire("Error", response, "error");
+                }
+            } else {
+                Swal.fire("Error", "Network error occurred", "error");
+            }
+        }
+    };
+    request.open("POST", "process/updateQtyProcess.php", true);
+    request.send(form);
+}
+
+function calculateTotals() {
+    var subtotal = 0;
+    var itemPrices = document.querySelectorAll('.item-price');
+    
+    itemPrices.forEach(function(priceElement) {
+        var priceText = priceElement.innerText;
+        var price = parseFloat(priceText.replace('Rs.', '').replace(/,/g, '').trim());
+        if (!isNaN(price)) {
+            subtotal += price;
+        }
+    });
+    
+    var deliveryFee = 500;
+    var discount = 0;
+    var total = subtotal + deliveryFee - discount;
+    
+
+    document.querySelector('.subtotal-amount').innerHTML = 'Rs.' + subtotal.toFixed(2);
+    document.querySelector('.total-amount').innerHTML = 'Rs.' + total.toFixed(2);
+    
+
+    if (subtotal > 5000) {
+        deliveryFee = 0;
+        document.querySelector('.delivery-fee').innerHTML = 'Rs.0.00';
+        total = subtotal + deliveryFee - discount;
+        document.querySelector('.total-amount').innerHTML = 'Rs.' + total.toFixed(2);
+    }
+}
+
+function removeFromCart(productId) {
+    Swal.fire({
+        title: "Remove item?",
+        text: "Are you sure you want to remove this item from cart?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#f97316",
+        cancelButtonColor: "#6c757d",
+        confirmButtonText: "Yes, remove it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var form = new FormData();
+            form.append("product_id", productId);
+            
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function() {
+                if (request.readyState === 4) {
+                    if (request.status === 200) {
+                        var response = request.responseText.trim();
+                        if (response === "success") {
+                            location.reload();
+                        } else {
+                            Swal.fire("Error", response, "error");
+                        }
+                    }
+                }
+            };
+            request.open("POST", "process/removeFromCart.php", true);
+            request.send(form);
+        }
+    });
+}
+
+function checkout() {
+    window.location.href = "checkout.php";
+}
