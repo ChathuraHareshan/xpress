@@ -68,10 +68,10 @@
 
 
                 if (!isset($_SESSION["u"])) {
-                    echo '<div class="text-center py-5">
-                        <h2 class="h4 fw-bold mb-3">Please login to view your cart</h2>
-                        <a href="login.php" class="btn btn-warning btn-lg">Login</a>
-                    </div>';
+                    if (!isset($_SESSION["u"])) {
+    echo '<script>alert("Please login first"); window.location = "index.php";</script>';
+    exit();
+}
                 } else {
                     $cart_rs = Database::search("SELECT * FROM `cart` WHERE `user_id` = '" . $_SESSION["u"]["user_id"] . "'");
                     $cart_num = $cart_rs->num_rows;

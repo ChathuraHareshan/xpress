@@ -4,7 +4,7 @@ include "process/connection.php";
 include "process/payhereConfig.php";
 
 if (!isset($_SESSION["u"])) {
-    echo '<script>alert("Please login first"); window.location = "signin.php";</script>';
+    echo '<script>alert("Please login first"); window.location = "index.php";</script>';
     exit();
 }
 

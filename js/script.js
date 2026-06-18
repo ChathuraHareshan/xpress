@@ -272,3 +272,58 @@ function removeFromCart(productId) {
 function checkout() {
     window.location.href = "checkout.php";
 }
+
+function addToWatchlist(productId) {
+    var form = new FormData();
+    form.append("id", productId);
+
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === 4 && request.status === 200) {
+            var response = request.responseText.trim();
+            
+            if (response === "added") {
+                Swal.fire({
+                    title: "Added to Watchlist!",
+                    icon: "success",
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+               
+                updateWatchlistButton(productId, true);
+            } else if (response === "removed") {
+                Swal.fire({
+                    title: "Removed from Watchlist!",
+                    icon: "info",
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+                updateWatchlistButton(productId, false);
+            } else {
+                Swal.fire({
+                    title: "Error!",
+                    text: response,
+                    icon: "error"
+                });
+            }
+        }
+    };
+    request.open("POST", "process/addToWatchlistProcess.php", true);
+    request.send(form);
+}
+
+function updateWatchlistButton(productId, isInWatchlist) {
+
+    const buttons = document.querySelectorAll(`[onclick*="addToWatchlist(${productId})"]`);
+    buttons.forEach(button => {
+        if (isInWatchlist) {
+            button.innerHTML = '<i class="bi bi-heart-fill"></i>';
+            button.classList.add('btn-warning');
+            button.classList.remove('btn-outline-warning');
+        } else {
+            button.innerHTML = '<i class="bi bi-heart"></i>';
+            button.classList.remove('btn-warning');
+            button.classList.add('btn-outline-warning');
+        }
+    });
+}

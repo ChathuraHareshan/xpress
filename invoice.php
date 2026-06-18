@@ -3,7 +3,7 @@ session_start();
 include "process/connection.php";
 
 if (!isset($_SESSION["u"])) {
-    header("Location: signin.php");
+    header("Location: index.php");
     exit();
 }
 

@@ -41,13 +41,11 @@ if (isset($_SESSION["au"])) {
             <a href="admin/manageProducts.php" class="nav-link-custom" data-section="manageProducts">
                 <i class="bi bi-archive"></i> Manage Products
             </a>
-            <a href="#" class="nav-link-custom" data-section="stock">
-                <i class="bi bi-box-seam"></i> Stock
-            </a>
+            
 
             <!-- USER MANAGEMENT -->
             <div class="nav-section-title mt-2">USER MANAGEMENT</div>
-            <a href="#" class="nav-link-custom" data-section="viewUsers">
+            <a href="admin/manageUsers.php" class="nav-link-custom" data-section="viewUsers">
                 <i class="bi bi-people"></i> View Users
             </a>
             <a href="#" class="nav-link-custom" data-section="reports">

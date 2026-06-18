@@ -139,3 +139,50 @@ function saveProduct() {
     request.open("POST", "../process/addProductProcess.php", true);
     request.send(form);
 }
+
+function updateOrderStatus(orderId, status) {
+    var form = new FormData();
+    form.append("order_id", orderId);
+    form.append("status", status);
+
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === 4 && request.status === 200) {
+            var response = JSON.parse(request.responseText);
+            if (response.success) {
+                Swal.fire({
+                    title: "Order updated",
+                    text: "Status changed successfully.",
+                    icon: "success",
+                    timer: 1200,
+                    showConfirmButton: false
+                });
+
+                var select = document.querySelector('[data-order-id="' + orderId + '"]');
+                if (select) {
+                    select.value = response.status;
+                }
+            } else {
+                Swal.fire({
+                    title: "Error",
+                    text: response.message,
+                    icon: "error"
+                });
+            }
+        }
+    };
+
+    request.open("POST", "../process/updateOrderStatusProcess.php", true);
+    request.send(form);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    var selects = document.querySelectorAll('.order-status-select');
+    selects.forEach(function (select) {
+        select.addEventListener('change', function () {
+            var orderId = this.getAttribute('data-order-id');
+            var status = this.value;
+            updateOrderStatus(orderId, status);
+        });
+    });
+});
