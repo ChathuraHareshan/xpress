@@ -136,7 +136,9 @@
                                                 <button class="btn btn-sm btn-outline-warning quantity-btn" onclick="updateQuantity(<?php echo $product_data['product_id']; ?>, 'decrease')">
                                                     <i class="bi bi-dash"></i>
                                                 </button>
+
                                                 <span class="badge bg-warning text-dark rounded-pill py-2 px-3 quantity-display" data-product="<?php echo $product_data['product_id']; ?>"><?php echo $cart_data["order_qty"]; ?></span>
+                                                
                                                 <button class="btn btn-sm btn-outline-warning quantity-btn" onclick="updateQuantity(<?php echo $product_data['product_id']; ?>, 'increase')">
                                                     <i class="bi bi-plus"></i>
                                                 </button>

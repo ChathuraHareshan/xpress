@@ -142,7 +142,6 @@
     for ($i = 0; $i < $product_num; $i++) {
         $product_data = $product_rs->fetch_assoc();
         
-        // Get all images for this product
         $img_rs = Database::search("SELECT path FROM `product_img` WHERE product_id = '" . $product_data["product_id"] . "'");
     ?>
 
