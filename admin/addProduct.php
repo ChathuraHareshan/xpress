@@ -25,7 +25,7 @@ if (isset($_SESSION["au"])) {
             <div class="row g-0">
                 <div class="col-auto sidebar" id="sidebarMenu">
                     <div class="logo-area d-flex align-items-center justify-content-between">
-                         <img src="../img/logo.jpeg" alt="Xpress logo" class="sidebar-logo mb-3 " style="width: 170px; height: auto;" onerror="this.style.display='none'">
+                        <img src="../img/logo.jpeg" alt="Xpress logo" class="sidebar-logo mb-3 " style="width: 170px; height: auto;" onerror="this.style.display='none'">
                         <button class="btn d-md-none p-0 border-0" id="closeSidebarBtn"><i class="bi bi-x-lg text-orange" style="color:#f97316;"></i></button>
                     </div>
 
@@ -42,23 +42,20 @@ if (isset($_SESSION["au"])) {
                     <a href="manageProducts.php" class="nav-link-custom" data-section="manageProducts">
                         <i class="bi bi-archive"></i> Manage Products
                     </a>
-                
+
 
                     <!-- USER MANAGEMENT -->
                     <div class="nav-section-title mt-2">USER MANAGEMENT</div>
                     <a href="manageUsers.php" class="nav-link-custom" data-section="viewUsers">
                         <i class="bi bi-people"></i> View Users
                     </a>
-                    <a href="#" class="nav-link-custom" data-section="reports">
-                        <i class="bi bi-file-text"></i> Reports
+
+                    <div class="nav-section-title mt-2">ORDER MANAGEMENT</div>
+                    <a href="manageOrders.php" class="nav-link-custom" data-section="viewUsers">
+                        <i class="bi bi-people"></i> Manage Order
                     </a>
 
-                    <!-- SUB REPORTS -->
-                    <div class="ps-4 ms-2 mt-1 mb-2">
-                        <a href="#" class="nav-link-custom small py-1 ps-3" data-section="salesReport" style="font-size:0.85rem;"><i class="bi bi-graph-up"></i> Sales Report</a>
-                        <a href="#" class="nav-link-custom small py-1 ps-3" data-section="productsReport" style="font-size:0.85rem;"><i class="bi bi-tag"></i> Products Report</a>
-                        <a href="#" class="nav-link-custom small py-1 ps-3" data-section="userReport" style="font-size:0.85rem;"><i class="bi bi-person-badge"></i> User Report</a>
-                    </div>
+
                 </div>
 
                 <!-- MAIN CONTENT AREA -->
@@ -185,7 +182,7 @@ if (isset($_SESSION["au"])) {
         <div id="mobileOverlay" class="d-md-none" style="position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.3); z-index:1040; display: none;"></div>
 
         <script src="../js/admin.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     </body>

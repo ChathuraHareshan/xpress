@@ -50,16 +50,11 @@ $user_num = $user_rs->num_rows;
                 <a href="manageUsers.php" class="nav-link-custom active" data-section="viewUsers">
                     <i class="bi bi-people"></i> View Users
                 </a>
-                <a href="#" class="nav-link-custom" data-section="reports">
-                    <i class="bi bi-file-text"></i> Reports
-                </a>
-
-                <!-- SUB REPORTS -->
-                <div class="ps-4 ms-2 mt-1 mb-2">
-                    <a href="#" class="nav-link-custom small py-1 ps-3" data-section="salesReport" style="font-size:0.85rem;"><i class="bi bi-graph-up"></i> Sales Report</a>
-                    <a href="#" class="nav-link-custom small py-1 ps-3" data-section="productsReport" style="font-size:0.85rem;"><i class="bi bi-tag"></i> Products Report</a>
-                    <a href="#" class="nav-link-custom small py-1 ps-3" data-section="userReport" style="font-size:0.85rem;"><i class="bi bi-person-badge"></i> User Report</a>
-                </div>
+                
+                 <div class="nav-section-title mt-2">ORDER MANAGEMENT</div>
+            <a href="manageOrders.php" class="nav-link-custom" data-section="viewUsers">
+                <i class="bi bi-people"></i> Manage Order
+            </a>
             </div>
 
         <div class="col main-content p-3 p-md-4">

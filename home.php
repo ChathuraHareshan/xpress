@@ -72,8 +72,8 @@
                             Profile
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">My Profile</a></li>
-                            <li><a class="dropdown-item" href="#">My Orders</a></li>
+                            <li><a class="dropdown-item" href="profile.php">My Profile</a></li>
+                            <li><a class="dropdown-item" href="myOrders.php">My Orders</a></li>
                             <li><a class="dropdown-item" href="watchlist.php">Watchlist</a></li>
                         </ul>
                     </div>

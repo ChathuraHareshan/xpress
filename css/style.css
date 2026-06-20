@@ -252,6 +252,98 @@ body {
     color: #ffffff;
 }
 
+.orders-page {
+    background: linear-gradient(180deg, #fffaf3 0%, #fff7ed 45%, #ffffff 100%);
+}
+
+.order-card {
+    border-radius: 1.4rem;
+    background: #fff;
+}
+
+.order-items-panel,
+.tracking-panel {
+    background: #fffaf3;
+    border: 1px solid rgba(255, 159, 67, 0.18);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.order-item-row {
+    background: #fff;
+    border-radius: 0.9rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid #f5e2c8;
+}
+
+.tracking-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.tracking-step {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: #b18a49;
+}
+
+.tracking-step.active {
+    color: #ff8a00;
+}
+
+.tracking-step.cancelled .tracking-dot,
+.tracking-step.cancelled .tracking-label {
+    color: #dc3545;
+}
+
+.tracking-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.35;
+    display: inline-block;
+}
+
+.tracking-step.active .tracking-dot {
+    opacity: 1;
+}
+
+.empty-orders-card {
+    border-radius: 1.4rem;
+}
+
+.empty-orders-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto;
+    border-radius: 999px;
+    background: #fff5e5;
+    color: #ff8a00;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+}
+
+.profile-sidebar {
+    border-radius: 1.4rem;
+    background: linear-gradient(180deg, #fffaf3 0%, #fff 100%);
+}
+
+.profile-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ffb347, #ff8a00);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
 @media (max-width: 767px) {
     .hero-section {
         padding-top: 3rem;

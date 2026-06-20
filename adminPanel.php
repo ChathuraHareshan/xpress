@@ -48,16 +48,14 @@ if (isset($_SESSION["au"])) {
             <a href="admin/manageUsers.php" class="nav-link-custom" data-section="viewUsers">
                 <i class="bi bi-people"></i> View Users
             </a>
-            <a href="#" class="nav-link-custom" data-section="reports">
-                <i class="bi bi-file-text"></i> Reports
+            
+            <!-- USER MANAGEMENT -->
+            <div class="nav-section-title mt-2">ORDER MANAGEMENT</div>
+            <a href="admin/manageOrders.php" class="nav-link-custom" data-section="viewUsers">
+                <i class="bi bi-people"></i> Manage Order
             </a>
 
-            <!-- SUB REPORTS -->
-            <div class="ps-4 ms-2 mt-1 mb-2">
-                <a href="#" class="nav-link-custom small py-1 ps-3" data-section="salesReport" style="font-size:0.85rem;"><i class="bi bi-graph-up"></i> Sales Report</a>
-                <a href="#" class="nav-link-custom small py-1 ps-3" data-section="productsReport" style="font-size:0.85rem;"><i class="bi bi-tag"></i> Products Report</a>
-                <a href="#" class="nav-link-custom small py-1 ps-3" data-section="userReport" style="font-size:0.85rem;"><i class="bi bi-person-badge"></i> User Report</a>
-            </div>
+        
         </div>
 
         <!-- MAIN CONTENT AREA -->
